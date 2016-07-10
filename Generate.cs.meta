@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: 3301121bce81bd442a0878d28b8f3464
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rocks: {fileID: 133190, guid: 3d3274b2adbc33c43a2a03203fa30b0c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
