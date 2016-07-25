@@ -19,13 +19,16 @@ public class Player : MonoBehaviour
 			Die();
 		}
 	}
-	void onCollisionEnter2D(Collision2D other)
-	{
-		Die();
+	void OnCollisionEnter2D(Collision2D col)
+	{ 
+		if (col.gameObject.tag == "Rock") 
+		{
+			Die ();
+		}
 	}
 	void Die()
 	{
-		Application.LoadLevel (0);
+		Application.LoadLevel (2);
 	}
 
 }

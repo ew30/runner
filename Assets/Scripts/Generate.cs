@@ -4,6 +4,7 @@ public class Generate : MonoBehaviour
 {
 	public GameObject rocks;
 	int score = 0;
+	int record;
 
 	void Start()
 	{
@@ -13,12 +14,22 @@ public class Generate : MonoBehaviour
 	void OnGUI () 
 	{
 		GUI.color = Color.white;
-		GUILayout.Label(" Score: " + score.ToString());
+		GUILayout.Label (" Счёт: " + score.ToString ());
+		GUILayout.Label (" Рекорд: " + record.ToString ());
 	}
 	
 	void CreateObstacle()
 	{
-		Instantiate(rocks);
+		Instantiate (rocks);
 		score++;
 	}
+
+	void Update () {
+	if (score > record) {
+		PlayerPrefs.SetInt ("savescore", score);
+		PlayerPrefs.Save ();
+		Debug.Log ("Save");
+	}
+	record = PlayerPrefs.GetInt ("savescore");
+}
 }
